@@ -1,0 +1,47 @@
+/* * {
+    /* border: 2px dotted red; */
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+nav button {
+    background: white;
+    padding: 0px;
+    color: rgb(116, 17, 197);
+    border: none;
+}
+
+nav h2 {
+    margin: 0 20px;
+}
+
+.quiz-container {
+    width: 90%;
+    margin: 10vh auto;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    background: purple;
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.quiz-container button {
+    display: block;
+    margin: 1vh auto;
+
+}
+    
+

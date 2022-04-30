@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Timed Coding Quiz </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
+       <nav>
+           <button onclick="showScore()">View High Score</button>
+           <h2>Time: <span id="time">60</span></h2>
+       </nav>
+        <div id="quiz" class="quiz-container">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following questions within the time frame limit.</p>
+        <button onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div id ="final-screen" class ="hide">
+            <h2> All Done!</h2>
+            <p> Your Final Score is <span id="final-score"></span>.</p>
+            <p>
+                Enter initial: <input type="text" id="initials" name="score" minlegnth="8">
+                <button id="submit"> Submit</button>
+            </p>
+        
+        </div>
+
+        
+    
+        <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/script.js"></script>
+    </body>
+</html>
