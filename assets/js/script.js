@@ -5,7 +5,7 @@ let clock = document.querySelector('#time')
 let prompt = document.querySelector('.quiz-container');
 let finalScreenE1 = document.querySelector('#final-screen');
 let finalSubmit = document.querySelector('[data-submit]');
-let score = 0;
+let initials = document.querySelector('#initials');
 
 //Shows the Quiz with the questions and answers
 function startQuiz() {
@@ -24,6 +24,7 @@ function startQuiz() {
                     time=0;
                     prompt.classList.add('hide');
                 }
+
                 time += 10;
             } else {
                 time -= 5;
@@ -50,9 +51,9 @@ function showResults() {
 function countDown() {
     time--;
     if (time < 0) {
-        time = 0;
-        quizOver(); 
+        time = 0; {}   
         clearInterval(timeId);
+        quizOver(); 
         prompt.innerHTML = 'You ran out of time';
     }
     clock.innerHTML = time;   
@@ -65,4 +66,6 @@ function quizOver(){
     let finalScoreE1 = document.getElementById("final-score");
     finalScoreE1.textContent=time;
 
+
 }
+

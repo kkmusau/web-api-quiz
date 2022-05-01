@@ -50,3 +50,7 @@ ol {
     max-height: 350px;
 }
 
+input[type="text"] {
+font: size 100%; ;
+}
+

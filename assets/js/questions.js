@@ -1,27 +1,27 @@
 const questions = [
     {
-        Q: 'Question 1',
-        A: ['test','ans1b','ans1c','ans1d'],
-        C: 'test'
+        Q: 'Commonly used data types DO NOT include:',
+        A: ['srtings','booleans','alerts','numbers'],
+        C: 'alerts'
     },
     {
-        Q: 'Question 2',
-        A: ['test','ans2b','ans2c','ans2d'],
-        C: 'test'
+        Q: 'Arrays in JavaScript can be used to store______. ',
+        A: ['numbers and strings','other arrays','booleans','all the above'],
+        C: 'all the above'
     },
     {
-        Q: 'Question 3',
-        A: ['test','ans3b','ans3c','ans3d'],
-        C: 'test'
+        Q: 'String vales must be enclosed within _____ when being assigned to variables.',
+        A: ['commas','curly brackets','quotes','parentheses'],
+        C: 'quotes'
     },
     {
-        Q: 'Question 4',
-        A: ['test','ans4b','ans4c','ans4d'],
-        C: 'test'
+        Q: 'A very useful tool used during development and debugging for printing content to the debugger is: ',
+        A: ['JavaScript','terminal / bash','for loops','console.log'],
+        C: 'console.log'
     },
     {
-        Q: 'Question 5',
-        A: ['test','ans5b','ans5c','ans5d'],
-        C: 'test'
+        Q: 'The condition in an if / else statement is enclosed within _____. ',
+        A: ['quote','curly brackets','parentheses','square brackets'],
+        C: 'parentheses'
     },
 ]
