@@ -19,6 +19,7 @@
 
 ## Screenshots
 
-![Password Generator](https://user-images.githubusercontent.com/101844445/164945927-a94a320c-c6b2-478a-a171-8ed3b7c59806.png)
+![Timed Coding Quiz (1)](https://user-images.githubusercontent.com/101844445/166128696-b85c51b2-1ffc-49dc-a160-3ce5adb8ac27.png)
 
+![Timed Coding Quiz (2)](https://user-images.githubusercontent.com/101844445/166128706-8f704d47-9f4d-4808-9671-65f36045f1b4.png)
 
