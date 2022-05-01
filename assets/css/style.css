@@ -26,6 +26,7 @@ nav h2 {
     flex-direction: column;
 }
 
+
 .hide {
     display: none;
 }
@@ -43,5 +44,9 @@ button {
     margin: 1vh auto;
 
 }
-    
+
+ol {
+    padding-left:0px;
+    max-height: 350px;
+}
 
