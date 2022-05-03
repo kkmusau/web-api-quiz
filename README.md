@@ -14,8 +14,8 @@
 
 ## Links
 
-- [GitHub] (https://github.com/kkmusau/PasswordGenerator)
-- [DeployedPage] (https://kkmusau.github.io/PasswordGenerator/)
+- [GitHub] (https://github.com/kkmusau/web-api-quiz)
+- [DeployedPage] (https://kkmusau.github.io/web-api-quiz/)
 
 ## Screenshots
 
