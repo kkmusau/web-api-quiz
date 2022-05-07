@@ -4,67 +4,68 @@ let time = 60;
 let clock = document.querySelector('#time')
 let prompt = document.querySelector('.quiz-container');
 let finalScreenE1 = document.querySelector('#final-screen');
-let finalSubmit = document.querySelector('[data-submit]');
+let finalSubmit = document.querySelector('button[data-submit]');
 let initials = document.querySelector('#initials');
 
 
 //Shows the Quiz with the questions and answers
 function startQuiz() {
-    let { Q, A, C } = questions[qI] || {};
     finalSubmit.addEventListener('click', showResults);
-    
-
     timeId = setInterval(countDown, 1000);
-    if (A || Q || C) {prompt.innerHTML = `<h1>${Q}</h1>`;}
+    showQuestion();
+};
 
-    if(A) { A.forEach(ans => {
-        let btn = document.createElement('button');
-        btn.innerText = ans;
-        btn.addEventListener('click', e => {
-            if (e.target.innerText == C) { 
-                if (qI== 4) {
-                    time=0;
-                    prompt.classList.add('hide'); 
-                    
-                }
-                time += 10;
-                
-            } else {
-                time -= 5;
-                if (time == 0){
-                }
-            }
-            qI++;
-            startQuiz();
+function showQuestion() {
+    let { Q, A, C } = questions[qI] || {};
+    if (A || Q || C) { prompt.innerHTML = `<h1>${Q}</h1>`; }
 
-        })
+    if (A) {
+        A.forEach(ans => {
+            let btn = document.createElement('button');
+            btn.innerText = ans;
+            btn.addEventListener('click', e => {
+                e.target.innerText == C
+                    ? time += 10
+                    : time -= 5;
 
-        prompt.appendChild(btn);
-    });} 
+                qI++;
+
+                if (qI == questions.length) {
+                    clearInterval(timeId);
+                    return quizOver();
+                };
+
+                showQuestion();
+            });
+
+            prompt.appendChild(btn);
+        });
+    };
 };
 
 // Submit Quiz
 function showResults() {
-    prompt.classList.add('hide'); 
-    window.localStorage.setItem('initials', initials);
+    console.log('Clicked');
+    prompt.classList.add('hide');
+    localStorage.setItem('initials', `{${initials.value}:${time}}`);
 }
 
 //Start Timer when Start Quiz button is pressed
 function countDown() {
     time--;
     if (time < 0) {
-        time = 0; {}   
+        time = 0;
         clearInterval(timeId);
         quizOver();
-        // prompt.innerHTML = 'You ran out of time';
     }
-    clock.innerHTML = time;   
+    clock.innerHTML = time;
 }
 
-function quizOver(){
+function quizOver() {
+    prompt.classList.add('hide');
     let finalScreenE1 = document.getElementById("final-screen");
     finalScreenE1.removeAttribute("class");
-    
+
     let finalScoreE1 = document.getElementById("final-score");
-    finalScoreE1.textContent=time;  
+    finalScoreE1.textContent = time;
 }
