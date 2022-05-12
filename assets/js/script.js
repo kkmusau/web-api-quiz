@@ -6,7 +6,31 @@ let prompt = document.querySelector('.quiz-container');
 let finalScreenE1 = document.querySelector('#final-screen');
 let finalSubmit = document.querySelector('button[data-submit]');
 let initials = document.querySelector('#initials');
+if (localStorage.scores == undefined) localStorage.scores = '[]';
+let store = JSON.parse(localStorage.scores);
 
+document.getElementById('score').addEventListener('click', handleScore);
+
+function handleClear() {
+    localStorage.clear();
+    window.location = 'index.html'
+}
+function handleScore() {
+    document.body.innerHTML =
+        `
+    <div class = "wrapper">
+            <h1>Highscores</h1>
+            <ol id ="highscores"></ol>
+                    <a href="index.html"><button> Go Back</button></a>
+                    <button onclick="handleClear()"> Clear Highscores</button>
+    </div>
+    `
+    store.forEach(pl => {
+        Object.entries(pl).forEach(obj => {
+            document.getElementById('highscores').innerHTML += `<li> ${obj[0]}: ${obj[1]} </li>`
+        });
+    });
+}
 
 //Shows the Quiz with the questions and answers
 function startQuiz() {
@@ -47,7 +71,8 @@ function showQuestion() {
 function showResults() {
     console.log('Clicked');
     prompt.classList.add('hide');
-    localStorage.setItem('initials', `{${initials.value}:${time}}`);
+    store.push({ [initials.value]: time });
+    localStorage.scores = JSON.stringify(store);
 }
 
 //Start Timer when Start Quiz button is pressed
